@@ -2,15 +2,6 @@ name: Docker Image CI
 
 on:
   workflow_dispatch:
-    inputs:
-      arch:
-        description: 'Target architecture'
-        required: true
-        type: choice
-        options:
-          - amd64
-          - arm64
-        default: amd64
 
 jobs:
   docker:
@@ -24,7 +15,7 @@ jobs:
         uses: robinraju/release-downloader@v1
         with:
           tag: ${{ github.ref_name }}
-          fileName: 'ungoogled-chromium-*-${{ inputs.arch }}_linux.tar.gz'
+          fileName: 'ungoogled-chromium-*_linux.tar.gz'
           out-file-path: .
       -
         name: Set up QEMU
@@ -43,7 +34,7 @@ jobs:
         uses: docker/build-push-action@v7
         with:
           context: .
-          platforms: linux/${{ inputs.arch }}
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/chromium-manager:${{ github.ref_name }}

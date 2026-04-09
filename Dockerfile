@@ -31,7 +31,7 @@ RUN \
     /var/lib/apt/lists/* \
     /var/tmp/*
 
-COPY ungoogled-chromium-*_linux.tar.gz /tmp/
+COPY ungoogled-chromium-*-${TARGETARCH}_linux.tar.gz /tmp/
 RUN mkdir -p /opt/chromium && \
   tar xf /tmp/ungoogled-chromium-*-${TARGETARCH}_linux.tar.gz --strip-components=1 -C /opt/chromium && \
   rm -f /tmp/ungoogled-chromium-*.tar.gz
